@@ -82,14 +82,33 @@
             background-color: #7f2e4c;
             line-height: 1.42857143;
             white-space: pre;
-            -webkit-transition: -webkit-transform ease 0.2s;
+            -webkit-transition: -webkit-transform ease 0.5s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
             -webkit-transform-origin: 50% 0;
             color: white;
+            &:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 1px;
+                bottom: 0;
+                left: 1px;
+                width: auto;
+                height: auto;
+                margin: 0;
+                background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08));
+                opacity: 0;
+                pointer-events: none;
+                -webkit-transition: opacity ease 0.5s;
+            }
             &:hover,
             &:focus {
                 -webkit-transform: rotateX(30deg);
                 color: white;
+                &:before {
+                    opacity: 1;
+                }
             }
         }
 
@@ -98,11 +117,17 @@
         }
 
         &.active {
+            z-index: 50;
             > a,
             > a:hover,
             > a:focus {
                 cursor: default;
                 color: white;
+                -webkit-transform: rotateX(15deg);
+                text-decoration: none;
+                &:before {
+                    opacity: 0.5;
+                }
             }
         }
     }
