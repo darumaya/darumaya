@@ -117,11 +117,17 @@
         }
 
         &.active {
+            z-index: 50;
             > a,
             > a:hover,
             > a:focus {
                 cursor: default;
                 color: white;
+                -webkit-transform: rotateX(15deg);
+                text-decoration: none;
+                &:before {
+                    opacity: 0.5;
+                }
             }
         }
     }
