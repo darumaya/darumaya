@@ -265,6 +265,7 @@ module.exports = function (grunt) {
                     expand: true, // 展開を有効に
                     cwd: 'dist/css/',
                     src: 'noren-*.css',
+                    src: ['noren-*.css', '!*.min.css'],
                     dest: 'dist/css/',
                     ext: ".min.css"
                 }]
