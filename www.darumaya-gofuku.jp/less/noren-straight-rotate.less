@@ -1,4 +1,6 @@
 // Core variables and mixins
+@import "../bootstrap/less/variables.less";
+@import "../bootstrap/less/mixins.less";
 @import "variables.less";
 @import "mixins.less";
 
@@ -49,8 +51,8 @@
 }
 
 .nav-noren-wrapper {
-    &:before {
-        content: ' ';
+    &:before, &:after {
+        content: " ";
         display: block;
         position: absolute;
         top: 0;
@@ -59,16 +61,10 @@
         background: @ebiiro;
         box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
+    &:before {
         left: -10001px;
+    }
     &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 0;
-        width: 10000px;
-        height: 40px;
-        background: #7f2e4c;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         right: -10001px;
     }
 }
@@ -77,6 +73,7 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+    .clearfix();
 
     > li {
         display: block;
@@ -103,17 +100,17 @@
         padding-right: 1px;
         padding-left: 1px;
         text-align: center;
-        -webkit-perspective: 400px;
+        perspective: 400px;
 
         > a {
             display: block;
             padding: 10px 0;
-            line-height: 1.42857143;
+            line-height: @line-height-base;
             background-color: @ebiiro;
             white-space: pre;
-            -webkit-transition: -webkit-transform ease 0.5s;
+            transition: transform ease 0.5s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
             color: white;
             &:before {
                 content: ' ';
@@ -127,16 +124,16 @@
                 height: auto;
                 margin: 0;
                 background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08));
-                opacity: 0;
+                .opacity(0);
                 pointer-events: none;
-                -webkit-transition: opacity ease 0.5s;
+                transition: opacity ease 0.5s;
             }
             &:hover,
             &:focus {
-                -webkit-transform: rotateX(30deg);
+                transform: rotateX(30deg);
                 color: white;
                 &:before {
-                    opacity: 1;
+                    .opacity(1);
                 }
             }
         }
