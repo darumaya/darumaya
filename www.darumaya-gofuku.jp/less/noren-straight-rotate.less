@@ -53,23 +53,23 @@
         content: ' ';
         display: block;
         position: absolute;
-        left: -10011px;
         top: 0;
         width: 10000px;
         height: 40px;
         background: @ebiiro;
         box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
+        left: -10001px;
     &:after {
         content: ' ';
         display: block;
         position: absolute;
-        right: -10011px;
         top: 0;
         width: 10000px;
         height: 40px;
         background: #7f2e4c;
         box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        right: -10001px;
     }
 }
 
@@ -82,7 +82,23 @@
         display: block;
         float: left;
         position: relative;
-        width: 16.66666667%;
+
+        width: (@container-sm / @noren-columns);
+
+        @media (min-width: @screen-md-min) {
+            width: ceil((@container-md / @noren-columns));
+            @media (max-width: @screen-md-max) {
+                &:nth-child(1),
+                &:nth-child(2) {
+                    width: floor((@container-md / @noren-columns));
+                }
+            }
+        }
+
+        @media (min-width: @screen-lg-min) {
+            width: (@container-lg / @noren-columns);
+        }
+
         min-height: 1px;
         padding-right: 1px;
         padding-left: 1px;
