@@ -7,19 +7,28 @@
 }
 
 .logo {
-    margin: 10px 0 0 -25px;
+    margin-top: 15px;
+    margin-left: (-@grid-gutter-width / 2);
 }
 
 .symbol-mark {
     float: left;
+    width: 60px;
+    height: 60px;
+    margin-top: -5px;
+    .img-retina("../images/symbol-mark.png"; "../images/symbol-mark@2x.png"; 60px; 60px);
 }
 
 .logo-type {
-    margin: 5px 0 5px 10px;
+    margin-left: (60px + @grid-gutter-width / 2);
+    width: 266px;
+    height: 25px;
+    .img-retina("../images/logo-type.png"; "../images/logo-type@2x.png"; 266px; 25px);
 }
 
 .tag-line {
-    margin: 5px 0 5px 45px;
+    margin-left: 60px;
+    margin-top: 5px;
     color: white;
     line-height: 15px;
 }
