@@ -177,6 +177,23 @@
     }
 }
 
+.jumbotron {
+    &.jumbotron-araihari {
+        background-image: url(../images/r1046195.768x318.hq.jpg);
+        background-position: center center;
+        background-size: cover;
+        height: 400px;
+        height: floor((@screen-sm-min * 0.4));
+        @media (min-width: @screen-md-min) {
+            height: floor((@screen-md-min * 0.4));
+        }
+        @media (min-width: @screen-lg-min) {
+            height: floor((@screen-lg-min * 0.4));
+        }
+        margin-top: -20px;
+    }
+}
+
 .keyframes(swing, {
     transform: rotateX(20deg);
 }, {
