@@ -25,23 +25,17 @@ module.exports = function (grunt) {
         jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'Bootstrap\\\'s JavaScript requires jQuery\') }\n\n',
 
         // Task configuration.
-        clean: {
-            dist: 'dist/css/noren-*.css'
-        },
-
         less: {
-            'noren-straight-rotate': {
+            'darumaya': {
                 options: {
                     strictMath: true,
                     sourceMap: true,
-                    outputSourceFiles: true,
-                    sourceMapURL: 'noren-straight-rotate.css.map',
-                    sourceMapFilename: 'dist/css/noren-straight-rotate.css.map'
+                    outputSourceFiles: true
                 },
                 files: [{
                         expand: true, // 展開を有効に
                         cwd: 'less/',
-                        src: 'noren-*.less',
+                        src: ['*.less', '!mixins.less', '!variables.less'],
                         dest: 'dist/css/',
                         ext: ".css"
                 }]
@@ -65,7 +59,19 @@ module.exports = function (grunt) {
                 options: {
                     map: true
                 },
-                src: 'dist/css/noren-*.css'
+                src: ['dist/css/*.css', '!dist/css/bootstrap.min.css']
+            }
+        },
+
+        csscomb: {
+            options: {
+                config: 'less/.csscomb.json'
+            },
+            dist: {
+                expand: true,
+                cwd: 'dist/css/',
+                src: ['*.css', '!bootstrap.min.css'],
+                dest: 'dist/css/'
             }
         },
 
@@ -79,22 +85,10 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true, // 展開を有効に
                     cwd: 'dist/css/',
-                    src: ['noren-*.css', '!*.min.css'],
+                    src: ['*.css', '!*.min.css', '!bootstrap.min.css'],
                     dest: 'dist/css/',
                     ext: ".min.css"
                 }]
-            }
-        },
-
-        csscomb: {
-            options: {
-                config: 'less/.csscomb.json'
-            },
-            dist: {
-                expand: true,
-                cwd: 'dist/css/',
-                src: 'noren-*.css',
-                dest: 'dist/css/'
             }
         },
 
