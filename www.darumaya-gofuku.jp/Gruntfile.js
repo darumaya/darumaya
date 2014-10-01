@@ -84,9 +84,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true, // 展開を有効に
                     cwd: 'dist/css/',
-                    src: ['*.css', '!*.min.css', '!bootstrap.min.css'],
+                    src: ['*.css', '!*.min.css'],
                     dest: 'dist/css/',
-                    ext: ".min.css"
+                    ext: '.min.css'
                 }]
             }
         },
