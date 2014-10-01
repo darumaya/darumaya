@@ -29,8 +29,7 @@ module.exports = function (grunt) {
             'darumaya': {
                 options: {
                     strictMath: true,
-                    sourceMap: true,
-                    outputSourceFiles: true
+                    sourceMap: false,
                 },
                 files: [{
                         expand: true, // 展開を有効に
