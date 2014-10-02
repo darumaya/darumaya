@@ -29,8 +29,7 @@ module.exports = function (grunt) {
             'darumaya': {
                 options: {
                     strictMath: true,
-                    sourceMap: true,
-                    outputSourceFiles: true
+                    sourceMap: false
                 },
                 files: [{
                         expand: true, // 展開を有効に
@@ -57,7 +56,7 @@ module.exports = function (grunt) {
             },
             noren: {
                 options: {
-                    map: true
+                    map: false
                 },
                 src: ['dist/css/*.css', '!dist/css/bootstrap.min.css']
             }
@@ -85,9 +84,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true, // 展開を有効に
                     cwd: 'dist/css/',
-                    src: ['*.css', '!*.min.css', '!bootstrap.min.css'],
+                    src: ['*.css', '!*.min.css'],
                     dest: 'dist/css/',
-                    ext: ".min.css"
+                    ext: '.min.css'
                 }]
             }
         },
