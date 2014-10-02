@@ -180,7 +180,6 @@
     background-color: @binroujizome;
     padding-top: 110px;
 
-        background-image: url(../images/r1046195.768x318.hq.jpg);
     .jumbotron {
         background-position: center center;
         background-size: cover;
@@ -199,6 +198,16 @@
             position: relative;
                 h1 {
                     font-family: @font-family-serif;
+                }
+            }
+        }
+
+        &.jumbotron-araihari {
+            background-image: url(../images/r1046195.768x318.hq.jpg);
+            > .container {
+                > .jumbotron-inner {
+                    right: 0;
+                    text-align: right;
                 }
             }
         }
