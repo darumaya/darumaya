@@ -196,6 +196,13 @@
             }
 
             position: relative;
+
+            > .jumbotron-inner {
+                position: absolute;
+                bottom: 0;
+                color: @gray-lighter;
+                text-shadow: 0 0 2px #000, 0 0 2px #000;
+
                 h1 {
                     font-family: @font-family-serif;
                 }
@@ -212,6 +219,8 @@
             }
         }
     }
+}
+
 section {
     h2 {
         font-family: @font-family-serif;
