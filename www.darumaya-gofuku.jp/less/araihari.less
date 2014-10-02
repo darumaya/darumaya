@@ -31,7 +31,7 @@
 .tag-line {
     margin-left: 60px;
     margin-top: 5px;
-    color: white;
+    color: @gray-lighter;
     line-height: 15px;
 }
 
@@ -42,7 +42,7 @@
 .noren-bottom {
     overflow: hidden;
     padding-bottom: 6px;
-    color: white;
+    color: @gray-lighter;
     .container {
         position: relative;
     }
@@ -77,7 +77,6 @@
         display: block;
         float: left;
         position: relative;
-
         width: (@container-sm / @noren-columns);
 
         @media (min-width: @screen-md-min) {
@@ -110,7 +109,7 @@
             transform: rotateX(0deg);
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
             transform-origin: 50% 0;
-            color: white;
+            color: @gray-lighter;
 
 
             &:before,
@@ -140,7 +139,7 @@
             &:focus {
                 transform: rotateX(30deg);
                 text-decoration: none;
-                color: white;
+                color: @gray-lighter;
                 &:before {
                     .opacity(1);
                 }
@@ -160,7 +159,7 @@
                 transition: none;
                 animation: swing ease-in-out 3s infinite alternate;
                 cursor: default;
-                color: white;
+                color: @gray-lighter;
                 &:before,
                 &:after {
                     .opacity(0);
@@ -177,27 +176,109 @@
     }
 }
 
-.jumbotron-wrapper {
+.section-jumbotron {
     background-color: @binroujizome;
-    padding-top: 130px;
-}
+    padding-top: 110px;
 
-.jumbotron {
-    &.jumbotron-araihari {
-        background-image: url(../images/r1046195.768x318.hq.jpg);
+    .jumbotron {
         background-position: center center;
         background-size: cover;
-        height: 400px;
-        height: floor((@screen-sm-min * 0.4));
-        @media (min-width: @screen-md-min) {
-            height: floor((@screen-md-min * 0.4));
+
+        > .container {
+            height: floor(((@screen-sm-min * 0.4) - (@jumbotron-padding * 1.6 * 2)));
+
+            @media (min-width: @screen-md-min) {
+                height: floor(((@screen-md-min * 0.4) - (@jumbotron-padding * 1.6 * 2)));
+            }
+
+            @media (min-width: @screen-lg-min) {
+                height: floor(((@screen-lg-min * 0.4) - (@jumbotron-padding * 1.6 * 2)));
+            }
+
+            position: relative;
+
+            > .jumbotron-inner {
+                position: absolute;
+                bottom: 0;
+                color: @gray-lighter;
+                text-shadow: 0 0 2px #000, 0 0 2px #000;
+
+                h1 {
+                    font-family: @font-family-serif;
+                }
+            }
         }
-        @media (min-width: @screen-lg-min) {
-            height: floor((@screen-lg-min * 0.4));
+
+        &.jumbotron-araihari {
+            background-image: url(../images/r1046195.768x318.hq.jpg);
+            > .container {
+                > .jumbotron-inner {
+                    right: 0;
+                    text-align: right;
+                }
+            }
         }
-        margin-top: -20px;
     }
 }
+
+section {
+    h2 {
+        font-family: @font-family-serif;
+    }
+}
+
+.section-araihari-steps {
+    > ol {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        .clearfix();
+
+        > li {
+            display: block;
+            position: relative;
+            width: (@font-size-base * @line-height-base);
+            float: left;
+
+            &.araihari-step-padding {
+                width: ((720px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
+                margin-top: 9px;
+                height: 2px;
+                background-color: @gray-light;
+
+                @media (min-width: @screen-md-min) {
+                    width: ((940px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
+                }
+
+                @media (min-width: @screen-lg-min) {
+                    width: ((1140px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
+                }
+            }
+
+            > label {
+                display: block;
+
+                > .araihari-step-radio {
+                    text-align: center;
+
+                    > input[type=radio] {
+                        margin-bottom: 8px;
+                    }
+                }
+
+                > .araihari-step-label {
+                    text-align: center;
+
+                    span {
+                        -webkit-writing-mode: vertical-rl;
+                        writing-mode: vertical-rl;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 .keyframes(swing, {
     transform: rotateX(20deg);
