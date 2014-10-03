@@ -352,79 +352,13 @@ section h2
 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.section-araihari-steps > ol
+.section-araihari-steps .nav-tabs
 {
-    margin-bottom: 0;
-    padding-left: 0;
-
-    list-style: none;
-}
-.section-araihari-steps > ol:before,
-.section-araihari-steps > ol:after
-{
-    display: table;
-
-    content: ' ';
-}
-.section-araihari-steps > ol:after
-{
-    clear: both;
-}
-.section-araihari-steps > ol > li
-{
-    position: relative;
-
-    display: block;
-    float: left;
-
-    width: 20.00000001px;
-}
-.section-araihari-steps > ol > li.araihari-step-padding
-{
-    width: 49.99999999px;
-    height: 2px;
-    margin-top: 9px;
-
-    background-color: #777;
-}
-@media (min-width: 992px)
-{
-    .section-araihari-steps > ol > li.araihari-step-padding
-    {
-        width: 71.99999999px;
-    }
-}
-@media (min-width: 1200px)
-{
-    .section-araihari-steps > ol > li.araihari-step-padding
-    {
-        width: 91.99999999px;
-    }
-}
-.section-araihari-steps > ol > li > label
-{
-    display: block;
-}
-.section-araihari-steps > ol > li > label > .araihari-step-radio
-{
-    text-align: center;
-}
-.section-araihari-steps > ol > li > label > .araihari-step-radio > input[type=radio]
-{
-    margin-bottom: 8px;
-}
-.section-araihari-steps > ol > li > label > .araihari-step-label
-{
-    text-align: center;
-}
-.section-araihari-steps > ol > li > label > .araihari-step-label span
-{
-    -webkit-writing-mode: vertical-rl;
-            writing-mode: vertical-rl;
+    margin-bottom: 15px;
 }
 .section-araihari-steps #carousel-araihari
 {
-    width: 840px;
+    width: 750px;
 }
 @-webkit-keyframes swing
 {

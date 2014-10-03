@@ -228,58 +228,12 @@ section {
 }
 
 .section-araihari-steps {
-    > ol {
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-        .clearfix();
-
-        > li {
-            display: block;
-            position: relative;
-            width: (@font-size-base * @line-height-base);
-            float: left;
-
-            &.araihari-step-padding {
-                width: ((720px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
-                margin-top: 9px;
-                height: 2px;
-                background-color: @gray-light;
-
-                @media (min-width: @screen-md-min) {
-                    width: ((940px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
-                }
-
-                @media (min-width: @screen-lg-min) {
-                    width: ((1140px - (@font-size-base * @line-height-base * @araihari-step-columns)) / (@araihari-step-columns - 1));
-                }
-            }
-
-            > label {
-                display: block;
-
-                > .araihari-step-radio {
-                    text-align: center;
-
-                    > input[type=radio] {
-                        margin-bottom: 8px;
-                    }
-                }
-
-                > .araihari-step-label {
-                    text-align: center;
-
-                    span {
-                        -webkit-writing-mode: vertical-rl;
-                        writing-mode: vertical-rl;
-                    }
-                }
-            }
-        }
+    .nav-tabs {
+        margin-bottom: 15px;
     }
 
     #carousel-araihari {
-        width: 840px;
+        width: 750px;
     }
 }
 
