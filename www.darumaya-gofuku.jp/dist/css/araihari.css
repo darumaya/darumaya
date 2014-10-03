@@ -422,6 +422,10 @@ section h2
     -webkit-writing-mode: vertical-rl;
             writing-mode: vertical-rl;
 }
+.section-araihari-steps #carousel-araihari
+{
+    width: 840px;
+}
 @-webkit-keyframes swing
 {
     0%
