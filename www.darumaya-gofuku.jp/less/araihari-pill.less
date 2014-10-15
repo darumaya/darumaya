@@ -233,9 +233,13 @@ section {
         padding-left: 0; // Override default ul/ol
         list-style: none;
         &:extend(.clearfix all);
+        position: relative;
+        left: 50%;
+        float: left;
 
         > li {
             position: relative;
+            left: -50%;
             display: block;
             float: left;
             width: 20px;
