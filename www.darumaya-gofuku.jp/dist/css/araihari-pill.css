@@ -354,6 +354,11 @@ section h2
 }
 .section-araihari-steps .nav-arrows
 {
+    position: relative;
+    left: 50%;
+
+    float: left;
+
     margin-bottom: 15px;
     padding-left: 0;
 
@@ -361,12 +366,13 @@ section h2
 }
 .section-araihari-steps .nav-arrows > li
 {
+    line-height: 1;
+
     position: relative;
+    left: -50%;
 
     display: block;
     float: left;
-
-    width: 20px;
 }
 .section-araihari-steps .nav-arrows > li > a
 {
@@ -374,7 +380,11 @@ section h2
 
     display: block;
 
+    width: 34px;
+    height: 104px;
     padding: 10px;
+
+    text-align: center;
 
     background-color: #eee;
 
@@ -392,11 +402,12 @@ section h2
 {
     display: block;
 
-    padding: 10px;
+    width: 14px;
+    padding: 45px 0;
 }
 .section-araihari-steps .nav-arrows > li + li
 {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 .section-araihari-steps .nav-arrows > li.active > a,
 .section-araihari-steps .nav-arrows > li.active > a:hover,
@@ -405,9 +416,13 @@ section h2
     color: #fff;
     background-color: #428bca;
 }
+.section-araihari-steps .panel
+{
+    clear: both;
+}
 .section-araihari-steps #carousel-araihari
 {
-    width: 750px;
+    width: 100%;
 }
 @-webkit-keyframes swing
 {
