@@ -242,13 +242,16 @@ section {
             left: -50%;
             display: block;
             float: left;
-            width: 20px;
+            line-height: 1;
 
             // Links rendered as pills
             > a {
                 position: relative;
                 display: block;
                 padding: 10px;
+                width: (@font-size-base + 10px * 2);
+                height: (@font-size-base * 6 + 10px * 2);
+                text-align: center;
 
                 -webkit-writing-mode: vertical-rl;
                 writing-mode: vertical-rl;
@@ -262,12 +265,13 @@ section {
             }
 
             > .glyphicon {
+                width: @font-size-base;
                 display: block;
-                padding: 10px;
+                padding: (10px + @font-size-base * 2.5) 0;
             }
 
             + li {
-                margin-left: 20px;
+                margin-left: 5px;
             }
 
             // Active state
@@ -280,6 +284,10 @@ section {
                 }
             }
         }
+    }
+
+    .panel {
+        clear: both;
     }
 
     #carousel-araihari {
